@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        let bar = {
+            myName: "极客邦",
+            test1: 1,
+        };
+        function foo() {
+            console.log("this :>> ", this);
+            this.myName = "极客时间";
+        }
+        // foo(); // this => window
+        foo.call(bar); // this => bar
+        // foo.apply(bar); // this => bar
+        // foo.bind(bar); // this => bar
+        console.log(bar);
+        console.log(myName);
+    </script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        console.time("Array initialize");
+        console.time("Array initialize2");
+        console.time("Array initialize3");
+        setTimeout(() => {
+            console.log("setTimeout 3000ms");
+            console.timeEnd("Array initialize3");
+        }, 3000);
+
+        setTimeout(() => {
+            console.log("setTimeout 1000ms");
+            console.timeEnd("Array initialize2");
+        }, 1000);
+
+        let num = 0;
+        for (let index = 0; index < 9999999; index++) {
+            num = num + index;
+        }
+        console.log("num :>> ", num);
+
+        setTimeout(() => {
+            console.log("setTimeout 0s");
+            console.timeEnd("Array initialize");
+        }, 0);
+    </script>
+</html>
