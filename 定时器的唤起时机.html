@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        setTimeout(() => {
+            console.log("1 :>> ", 1);
+        }, 0);
+
+        let num = 0;
+        for (let index = 0; index < 1000; index++) {
+            num += index;
+        }
+        console.log(num);
+
+        let num2 = 0;
+        for (let index = 0; index < 500000000; index++) {
+            num2 += index;
+        }
+        console.log(num2);
+    </script>
+    <script src="定时器的唤起时机.js"></script>
+</html>

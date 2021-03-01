@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        /* 申明函数 */
+        async function asyncFunc() {
+            console.log(2);
+            await foo();
+            console.log(8);
+        }
+
+        function foo() {
+            new Promise((resolve) => {
+                console.log(3);
+                resolve();
+                console.log(4);
+            })
+                .then(() => {
+                    console.log(6);
+                    new Promise((resolve) => {
+                        console.log(7);
+                        resolve();
+                    }).then(() => {
+                        console.log(9);
+                    });
+                })
+                .then(() => {
+                    console.log(10);
+                });
+        }
+
+        /* 程序执行 */
+        console.log(1);
+
+        // 默认的 delay 是 0
+        setTimeout(() => {
+            console.log(11);
+        });
+
+        asyncFunc();
+
+        console.log(5);
+    </script>
+</html>
